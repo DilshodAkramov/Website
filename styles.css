@@ -1,0 +1,791 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    scroll-behavior: smooth;
+}
+:root{
+    
+    --primary-color: #edf2fc;
+    --secondary-color: #212121;
+
+
+
+}
+.dark-theme{
+    --primary-color: #212121;
+    --secondary-color: #fff;
+}
+
+.mainPage{
+    width: 100%;
+    height: 15vh;
+    background: linear-gradient(90deg,rgb(184, 176, 125),rgb(191, 173, 68));
+}
+#icon{
+    width: 30px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.navLogo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+
+.navLogo h1{
+    position: absolute;
+    left: 8%;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    letter-spacing: 0.02em;
+    border-radius: 15px;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    box-shadow: none;
+}
+.navLogo h1:hover{
+    display: block;
+    background-color: rgb(174, 63, 117);
+    letter-spacing: .40em;
+}
+.navLogo > img{
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 40px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.navLogo:hover img{
+    transform: scale(0.9);
+}
+.navLogo ul li
+{
+
+    display: inline-block;
+
+
+}
+.navLogo ul{
+    margin-right: 60px;
+}
+
+.navLogo ul li a{
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    padding: 10px 10px;
+    margin-left: 10px;
+    transition: all 0.5s;
+}
+.navLogo ul li a:hover{
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+@media (max-width: 600px) {
+    .mainPage{
+        height: 5vh;
+    }
+    .navLogo ul li{
+        display: none;
+    }
+    .navLogo > img{
+        width: 40px;
+        height: 60px;
+    }
+    .navLogo h1{
+        margin-bottom: 20px;
+        left: 20%;
+        font-size: 1.4rem;
+    }
+}
+/*---------TITEL ANIMATION----*/
+
+
+.title{
+    position: absolute;
+    top: 10%;
+    color: var(--primary-color);
+    font-size: 70px;
+    line-height: 100px;
+    font-weight: bold;
+    height: 100px;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    width: 50%;
+    transition: all 0.5s ease-in-out;
+
+}
+.title:hover{
+    background-color: rgb(191, 173, 68);
+}
+.slider{
+    color: #d3773a;
+    margin-left: 12px;
+    box-sizing: border-box;
+    animation: slider 6s linear infinite;
+
+}
+@keyframes slider{
+    0%{
+        margin-top: -400px;
+    }
+    5%{
+        margin-top: -200px;
+    }
+    30%{
+        margin-top: -200px;
+    }
+    35%{
+        margin-top: 0px;
+    }
+    65%{
+        margin-top: 0px;
+    }
+    70%{
+        margin-top: 200px;
+    }
+    
+    100%{
+        margin-top: 200px;
+    }
+}
+
+@media (max-width: 600px){
+    .title{
+        font-size: 20px;
+    }
+}
+
+/*-----Slides Foto----*/
+.container {
+    position: relative;
+    margin-top: 1%;
+
+    width: 100%;
+    height: 70vh;
+    background: var(--secondary-color);
+    overflow: hidden;
+
+}
+.tabs input {
+    visibility: hidden;
+    display: none;
+}
+.buttons
+{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+
+}
+
+.buttons label{
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    opacity: 0.5;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.tabs input:nth-child(1):checked ~ .buttons label:nth-child(1),
+.tabs input:nth-child(2):checked ~ .buttons label:nth-child(2),
+.tabs input:nth-child(3):checked ~ .buttons label:nth-child(3)
+{
+    opacity: 1;
+    width: 50px;
+}
+.content {
+    position: relative;
+    width: 300vw;
+    display: flex;
+    transition: 0.5s;
+    
+}
+
+.content .box {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+
+    
+    
+
+}
+.content .box img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+
+
+.tabs input:nth-child(1):checked ~ .content
+{
+    left: 0;
+}
+.tabs input:nth-child(2):checked ~ .content
+{
+    left: -100vw;
+}
+.tabs input:nth-child(3):checked ~ .content
+{
+    left: -200vw;
+}
+
+.content .box .contentBx{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+
+
+}
+.content .box .contentBx p{
+    font-size: 2em;
+    color: var(--primary-color);
+    position: absolute;
+    top: 25%;
+    text-align: center;
+    background: linear-gradient(90deg,rgba(184, 176, 125, 0.878),rgba(191, 173, 68, 0.829));
+    letter-spacing: 0.01em;
+    margin: 10px 0;
+    transition: all 0.5s ease-in-out;
+}
+.content .box .contentBx p:hover{
+    background: linear-gradient(90deg,rgb(184, 176, 125),rgba(191, 173, 68, 0.992));
+    cursor: pointer;
+}
+.content .box .contentBx button{
+    position: absolute;
+    display: block;
+    padding: 15px 25px;
+    margin: 20px;
+    font-size: 24px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    border: 2px solid #d3773a;
+    color: var(--primary-color);
+    cursor: pointer;
+    background: linear-gradient(to left, transparent 50%, #d3773a 50%);
+    background-position: right;
+    background-size: 200%;
+    transition: background-position .7s;
+
+}
+.content .box .contentBx button:hover{
+    background-position: left;
+    color: var(--secondary-color);
+}
+
+@media (max-width: 600px) {
+    .tabs{
+        background: var(--secondary-color);
+
+
+    }
+    .content .box .contentBx p{
+        font-size: 1.1rem;
+    }
+}
+
+
+/*----PRODUKT Grid---*/
+
+.produkt
+{
+    margin-top: 15px;
+    display: block;
+    height: 11vh;
+    text-align: center;
+    font-size: 2.6rem;
+    color: var(--primary-color);
+    background: linear-gradient(rgb(184, 176, 125),rgb(191, 173, 68));
+    letter-spacing: 0.04em;
+    transition: all 0.5s;
+}
+.produkt:hover{
+    letter-spacing: 0.4em;
+    cursor: pointer;
+
+}
+
+.gridProdukts{
+
+    box-sizing: border-box;
+    padding: 16px;
+    margin-top: 2%;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 400px;
+    gap: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+/*--INHALT GRID----*/
+.card{
+    position: relative;
+    width: 300px;
+    height: 350px;
+
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+.card .circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.card .circle::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgb(171, 123, 108),rgb(188, 22, 22));
+    clip-path: circle(100px at center);
+    transition: all 0.5s ease-in-out;
+}
+.card:hover .circle::before{
+    background:linear-gradient(rgb(184, 176, 125),rgb(191, 173, 68));
+    clip-path: circle(400px at center);
+}
+.card > img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 200px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+}
+.card:hover img{
+    left: 90%;
+    height: 350px;
+}
+.card .content{
+    position: relative;
+    width: 50%;
+    padding: 20px;
+    transition: 0.5s;
+    left: 20%;
+    opacity: 0;
+    visibility: hidden;
+    display: block;
+}
+.card:hover .content{
+    opacity: 1;
+    left: 0;
+    visibility: visible;
+}
+
+.card .content h2{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2rem;
+    line-height: 1em;
+    margin-bottom: 5px;
+}
+.card .content p{ 
+    color: #fff;
+    margin: 5px;
+    padding: 5px;
+}
+.card .content button{
+    position: relative;
+    width: 100px;
+    height: 40px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding: 10px 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background: linear-gradient(rgb(171, 123, 108),rgb(188, 22, 22));
+    color: #fff;
+    margin-top: 10px;
+    margin-left: 20px;
+    text-align: center;
+    font-weight: 500;
+    border: none;
+    font-size: 1rem;
+    transition: all .5s ease-in-out;
+
+
+}
+.card .content button:hover{
+
+    letter-spacing: 1px;
+    transform: scale(1.1);
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+
+@media (max-width: 991px)
+{
+    .card{
+        width: auto;
+        max-width: 350px;
+        align-items: flex-start;
+        margin: 10px;
+
+    }
+    .card:hover{
+        height: 600px;
+    }
+    .card .contant{
+        width: 100%;
+        left: 0;
+        padding: 30px;
+    }
+    .card > img{
+        top: 70%;
+        left: 50%;
+        height: 300px;
+    }
+}
+@media (max-width: 420px){
+    .card .contant{
+
+        padding: 20px;
+    }
+}
+
+/*---VIDEO CSS----*/
+.videoFirst{
+
+    background-image: linear-gradient(rgba(184, 176, 125, 0.396),rgba(154, 137, 43, 0.642));
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 114vh;
+
+}
+.backVideo{
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+
+}
+
+.content2{
+    text-align: center;
+    position: relative;
+    display: block;
+}
+.content2 h1{
+    font-size: 160px;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.content2 P{
+    margin: 10px 10px;
+    font-size: 100px;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.5s;
+    cursor: pointer;
+    -webkit-text-stroke: 2px #fff;
+    color: transparent;
+}
+
+.content2 h1:hover{
+    -webkit-text-stroke: 2px #fff;
+    color: transparent;
+}
+.content2 a{
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    font-size: 24px;
+    border: 2px solid #fff;
+    padding: 14px 70px;
+    border-radius: 50px;
+    margin-top: 20px;
+    transition: all 1s;
+}
+.content2 a:hover{
+    letter-spacing: 0.2em;
+    background: #fff;
+    color: black;
+}
+
+@media (min-aspect-ratio: 16/9){
+    .backVideo{
+        width: 100%;
+        height: auto;
+    }
+}
+@media (max-aspect-ratio: 16/9){
+    .backVideo{
+        width: auto;
+        height: 100%;
+    }
+}
+
+/*---ABOUT ITEMS--*/
+.container {
+    background: none;
+}
+
+#portfolio{
+    padding: 50px 0;   
+}
+.sub-title{
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
+    font-size: 3rem;
+    color: #fff;
+    background: rgba(154, 137, 43, 0.642);
+    transition: all 0.6s ease-in-out;
+    cursor: pointer;
+
+}
+.sub-title:hover{
+    letter-spacing: 6px;
+}
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+    grid-gap: 40px;
+    margin: 20px;
+
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    height: 100%;
+    background-position: center;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(184, 176, 125, 0.834),rgba(191, 173, 68, 0.056));
+    border-radius: 10px;
+    position: absolute;
+    color: #fff;
+    left: 0;
+    bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 40px;
+    transition: height 0.5s;
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+
+}
+.layer P{
+    font-size: 16px;
+
+}
+.layer a{
+    margin-top: 20px;
+    color: #ff004f;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+
+}
+.layer a:hover{
+    background: #ff004f;
+    color: #fff;
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+.work:hover .layer{
+    height: 100%;
+    cursor: pointer;
+}
+.btm {
+    position: relative;
+    display: block;
+    margin: 35px auto;
+    width: fit-content;
+    border: none;
+    box-shadow: none;
+    padding: 14px 50px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 400;
+    color: #fff;
+    transition: all 0.5s ease-in-out;
+    letter-spacing: 1px;
+    background: linear-gradient(rgba(184, 176, 125, 0.878),rgba(191, 173, 68, 0.829));
+
+}
+.btm:hover{
+    background-color: rgba(110, 94, 5, 0.829);
+    transform: scale(1.1);
+}
+
+/*---FOOTER----*/
+
+.footer{
+    position: relative;
+    width: 100%;
+    height: 30vh;
+    background: linear-gradient(rgba(188, 182, 140, 0.878),rgba(191, 168, 36, 0.829));
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.footer .boxes{
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+
+}
+.footer .boxes h2{
+    letter-spacing: 1px;
+    margin: 10px 0 15px 0;
+}
+.footer .boxes a{
+
+    text-decoration: none;
+    font-size: 30px;
+    margin-top: 30px;
+    margin-right: 15px;
+    color: #fff;
+    display: inline-block;
+    border-radius: 15px;
+    transition: all 0.5s ease-in-out;
+}
+.footer .boxes a:hover{
+    transform: translateY(-10px);
+    color: #ff004f;
+}
+.footer .boxes p i{
+    margin-right: 5px;
+    padding: 10px;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.footer .boxes p i:hover{
+    transform: translateY(-10px);
+    background-color: #ff004f;
+}
+
+
+.copy{
+
+    padding: 10px;
+    text-align: center;
+    background: rgba(191, 168, 36, 0.829);
+    
+
+}
+.copy h1 {
+    padding: 20px;
+    font-size: 1rem;
+}
+.copy h1 i{
+    padding: 5px;
+    font-size: 1.4rem;
+    color: #ff004f;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+.copy h1 i:hover{
+    transform: scale(1.4);
+}
+
+/*-----TO TOP BUTTON---*/
+
+.to-top{
+    background: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    bottom: 16px;
+    right: 32px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 300;
+    color: #fff;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s;
+}
+.to-top.active{
+    bottom: 32px;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+#preLoader{
+    background: #282727 url(images/loader.gif) no-repeat center;
+    background-size: 50%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
